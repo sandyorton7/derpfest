@@ -25,6 +25,9 @@ $(call inherit-product, device/motorola/potter/device.mk)
 # Inherit some common AOSIP stuff.
 $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
+# PixelStyle
+$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
+
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
@@ -38,11 +41,11 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
-PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
+#PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="Moto G5 Plus" \
-    DEVICE_MAINTAINERS="Nick van Bokhorst (GtrCraft)"
+#    DEVICE_MAINTAINERS="Nick van Bokhorst (GtrCraft)"
 
 # for specific
 $(call inherit-product, vendor/motorola/potter/potter-vendor.mk)
